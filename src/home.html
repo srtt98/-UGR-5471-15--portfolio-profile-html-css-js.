@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio website</title>
+    <link rel="stylesheet" href="portfolio.css" />
+    <link rel="stylesheet" href="portfolio.js" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="portfolio.js" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -11,46 +21,82 @@
   </head>
   <body>
     <header class="header">
-      <a href="/src/home.html" class="logo" target="_blank">Saron.</a>
       <nav class="navbar">
+        <a href="home.html" class="logo" target="_blank">Saron.</a>
+        <i class="fa fa-bars" id="menuicon" aria-hidden="true"></i>
         <ul>
           <li>
-            <a href="/src/home.html" class="active" target="_blank">Home</a>
+            <a href="home.html" class="active" target="_blank">Home</a>
           </li>
-          <li><a href="/src/about.html" target="_blank">About</a></li>
-          <li><a href="/src/hobby.html" target="_blank">Hobby</a></li>
-          <li><a href="/src/portfolio.html" target="_blank">Portfolio</a></li>
-          <li><a href="/src/contact.html" target="_blank">Contact</a></li>
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="hobby.html" target="_blank">Hobby</a></li>
+          <li><a href="portfolio.html" target="_blank">Portfolio</a></li>
+          <li><a href="contact.html" target="_blank">Contact</a></li>
         </ul>
       </nav>
+
+      <div class="sidebar" id="sidebar">
+        <i class="fa fa-times" id="closeicon" aria-hidden="true"></i>
+        <ul class="sidebarlist">
+          <li>
+            <a href="home.html" class="active" target="_blank">Home</a>
+          </li>
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="hobby.html" target="_blank">Hobby</a></li>
+          <li><a href="portfolio.css" target="_blank">Portfolio</a></li>
+          <li><a href="contact.html" target="_blank">Contact</a></li>
+        </ul>
+      </div>
     </header>
+
     <section class="home">
-      <div class="home-content">
-        <h1>Hi, I'm Saron Tadesse</h1>
-        <p>
-          I'm a very motivated student of software engineering that is
-          passionate about full-stack web development and always strives for
-          perfection. Beyond technical proficiency, I'm equally committed to
-          teamwork, problem-solving, and producing creative solutions that both
-          meet and beyond expectations.
-        </p>
+      <div class="homemain">
+        <div class="img-box">
+          <img src="images/image3.jpg" alt="is an image of my profile" />
+        </div>
+        <div class="home-content">
+          <h1>Hi, I'm Saron Tadesse</h1>
+          <p>
+            I'm a very motivated student of software engineering that is
+            passionate about full-stack web development and always strives for
+            perfection. Beyond technical proficiency, I'm equally committed to
+            teamwork, problem-solving, and producing creative solutions that
+            both meet and beyond expectations.
+          </p>
+          <div class="buttonbox">
+            <a href="/src/about.html" target="_blank">Let's talk</a>
+          </div>
+        </div>
       </div>
-      <div class="buttonbox">
-        <a href="/src/about.html" target="_blank">Let's talk</a>
-      </div>
-      <div class="img-box">
-        <img src="images/image3.jpg" alt="profile image" />
-      </div>
+
       <br />
-      <div>
-        <a href="#"><i class="bx bxl-facebook"></i></a>
-        <a href="#"><i class="bx bxl-telegram"></i></a>
-        <a href="#"><i class="bx bxl-instagram"></i></a>
-      </div>
     </section>
+    <div class="social-links">
+      <a href="contact.html"><i class="bx bxl-facebook"></i> face book</a>
+      <a href="home.html"><i class="bx bxl-telegram"></i> telegram</a>
+      <a href="contact.html"><i class="bx bxl-instagram"></i> instagram</a>
+    </div>
     <footer>
       <p>© 2023 Saron Tadesse</p>
       <a href="mailto:sarontadesse98@email.com">sarontadesse98@email.com</a>
     </footer>
+    <script>
+      const menuIcon = document.getElementById("menuicon");
+      const sidebar = document.getElementById("sidebar");
+      const closeIcon = document.getElementById("closeicon");
+
+      menuIcon.addEventListener("click", () => {
+        if (sidebar.style.display === "none" || sidebar.style.display === "") {
+          sidebar.style.right = "0";
+        }
+        menuIcon.style.display = "none";
+      });
+      closeicon.addEventListener("click", () => {
+        if (sidebar.style.display === "none" || sidebar.style.display === "") {
+          sidebar.style.right = "-200px";
+        }
+        menuIcon.style.display = "block";
+      });
+    </script>
   </body>
 </html>

@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio website</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="portfolio.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="portfolio.js" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -12,19 +20,34 @@
   </head>
   <body>
     <header class="header">
-      <a href="/src/home.html" target="_blank" class="logo">Saron.</a>
       <nav class="navbar">
+        <a href="home.html" class="logo" target="_blank">Saron.</a>
+        <i class="fa fa-bars" id="menuicon" aria-hidden="true"></i>
         <ul>
           <li>
-            <a href="/src/home.html" target="_blank" class="active">Home</a>
+            <a href="home.html" class="active" target="_blank">Home</a>
           </li>
-          <li><a href="/src/about.html" target="_blank">About</a></li>
-          <li><a href="/src/hobby.html" target="_blank">Hobby</a></li>
-          <li><a href="/src/portfolio.html" target="_blank">Portfolio</a></li>
-          <li><a href="/src/contact.html" target="_blank">Contact</a></li>
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="hobby.html" target="_blank">Hobby</a></li>
+          <li><a href="portfolio.html" target="_blank">Portfolio</a></li>
+          <li><a href="contact.html" target="_blank">Contact</a></li>
         </ul>
       </nav>
+
+      <div class="sidebar" id="sidebar">
+        <i class="fa fa-times" id="closeicon" aria-hidden="true"></i>
+        <ul class="sidebarlist">
+          <li>
+            <a href="home.html" class="active" target="_blank">Home</a>
+          </li>
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="hobby.html" target="_blank">Hobby</a></li>
+          <li><a href="portfolio.css" target="_blank">Portfolio</a></li>
+          <li><a href="contact.html" target="_blank">Contact</a></li>
+        </ul>
+      </div>
     </header>
+
     <section class="about-content">
       <h2>About Me</h2>
       <div class="about-intro">
@@ -37,22 +60,11 @@
           create.
         </p>
       </div>
-      <div class="slider-wrapper">
-        <div class="slider">
-          <img id="slide-1" src="images/image1.jpg" alt="educational image" />
-          <img id="slide-2" src="images/image4.jpg" alt="personal image" />
-          <img
-            id="slide-3"
-            src="images/image2.jpg"
-            alt="image during working"
-          />
-        </div>
-        <div class="slider-nav">
-          <a href="#slide-1"></a>
-          <a href="#slide-2"></a>
-          <a href="#slide-3"></a>
-        </div>
+
+      <div class="personalimg">
+        <img src="images/image4.jpg" alt="personal image" />
       </div>
+
       <div class="about-details">
         <div class="background">
           <h3>Background</h3>
@@ -88,15 +100,33 @@
           </p>
         </div>
       </div>
-      <div>
-        <a href="#"><i class="bx bxl-facebook"></i></a>
-        <a href="#"><i class="bx bxl-telegram"></i></a>
-        <a href="#"><i class="bx bxl-instagram"></i></a>
-      </div>
     </section>
+    <div class="social-links">
+      <a href="#"><i class="bx bxl-facebook"></i></a>
+      <a href="#"><i class="bx bxl-telegram"></i></a>
+      <a href="#"><i class="bx bxl-instagram"></i></a>
+    </div>
     <footer>
       <p>© 2023 Saron Tadesse</p>
       <a href="mailto:sarontadesse98@email.com">sarontadesse98@email.com</a>
     </footer>
+    <script>
+      const menuIcon = document.getElementById("menuicon");
+      const sidebar = document.getElementById("sidebar");
+      const closeIcon = document.getElementById("closeicon");
+
+      menuIcon.addEventListener("click", () => {
+        if (sidebar.style.display === "none" || sidebar.style.display === "") {
+          sidebar.style.right = "0";
+        }
+        menuIcon.style.display = "none";
+      });
+      closeicon.addEventListener("click", () => {
+        if (sidebar.style.display === "none" || sidebar.style.display === "") {
+          sidebar.style.right = "-200px";
+        }
+        menuIcon.style.display = "block";
+      });
+    </script>
   </body>
 </html>
